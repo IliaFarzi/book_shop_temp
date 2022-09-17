@@ -67,11 +67,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">صفحه اصلی <span class="sr-only">(current)</span></a>
+        <a class="nav-link home-page" href="#">صفحه اصلی <span class="sr-only">(current)</span></a>
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           موضوعات
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -88,38 +88,8 @@
 						</nav>
 
 				</div>
-			<main class="container-fluid">
-			<!-- InstanceBeginEditable name="EditRegion3" -->
-			   <div class="row">
-				    <div class="col-4 mt-2">
-							   <div class="card">
-								   <div class="card-header bg-jet"><h4 class="text-light text-center">اعمال فیلتر</h4></div>
-							   </div>
-								<div class="card-body direction-ltr">
-									<input type="text" class="js-range-slider" name="my_range" value="" /></div>
-							 </div>
+			<main class="container-fluid" id = "main">
 
-							<div class="col-8">
-							   <div class="card border-0">
-								    <section class="bookShowList"></section>
-								  </div>
-								<div>
-									<ul class="pagination d-flex justify-content-center">
-										<li class="page-item perv">
-											<a class="page-link text-dark" href="#" aria-label="Previous">
-												<span aria-hidden="true">&laquo;</span>
-											</a>
-										</li>
-										<li class="page-item next">
-											<a class="page-link text-dark" href="#" aria-label="Next">
-												<span aria-hidden="true">&raquo;</span>
-											</a>
-										</li>
-									</ul>
-								</div>
-							 </div>
-				  </div>
-			<!-- InstanceEndEditable -->
 			</main>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -129,6 +99,7 @@
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap-4.3.1.js"></script>
 	<script src = "node_modules/ion-rangeslider/js/ion.rangeSlider.js"></script>
+			<script src = "node_modules/elevatezoom/jquery.elevatezoom.js"></script>
 			<script src="node_modules/jquery-cookie-master/src/jquery.cookie.js"></script>
 			<script src="js/script.js"></script>
 	<!-- InstanceBeginEditable name="EditRegion4" -->
