@@ -1,0 +1,39 @@
+@font-face{
+	font-family: ir-sans;
+	src: url("../iransans/Iranian Sans.ttf");
+}
+html , body{
+	direction: rtl;
+	text-align: right;
+	font-family: ir-sans ;
+}
+.top-header{
+	  height: auto;
+	line-height: 40px;
+}
+.top-header  i{
+	font-size: 25px;
+	transition: 200ms;
+}
+.img-logo{
+	width: 350px;
+}
+.header{
+	line-height: 150px;
+	border-bottom: 1px solid silver;
+	background-color: #FBFBFB;
+}
+.top-header i:hover{
+	color: dodgerblue;
+	cursor: pointer;
+}
+.pagination{
+	direction: ltr;
+}
+
+
+/*Deatails Page shopping btn*/
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: rgba(0,0,0,0.200) !important;
+}

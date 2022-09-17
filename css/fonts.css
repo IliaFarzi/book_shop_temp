@@ -1,0 +1,16 @@
+@font-face{
+	font-family: vazir;
+	src: url("../fonts/Vazir.ttf");
+	src: url("../fonts/Vazir.eot");
+	src: url("../fonts/Vazir.woff");
+	src: url("../fonts/Vazir.woff2");
+}
+
+
+@font-face{
+	font-family: ir-sans;
+	src: url("../fonts/IRANSansWeb.ttf");
+	src: url("../fonts/IRANSansWeb.eot");
+	src: url("../fonts/IRANSansWeb.woff");
+	src: url("../fonts/IRANSansWeb.woff2");
+}

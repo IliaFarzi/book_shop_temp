@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+</head>
+<body>
+
+  <div class="container">
+      <div class="row">
+          <div class="col-5 mx-auto">
+              <div class="card border-0">
+                  <div class="card-body">
+                      <form action="" method="post">
+                          <fieldset>
+                              <legend>submit Form</legend>
+                          </fieldset>
+
+                          <form method="post" novalidate>
+                              <div class="form-group">
+                                  <label for="username">Username </label>
+                                  <input type="text" class="form-control" id="username" placeholder="Username Here" data-validation="on" data-validation-role="required,validNumber">
+
+                              </div>
+                              <div class="form-group">
+                                  <label for="age">Age</label>
+                                  <input type="text" class="form-control" id="age" placeholder="Age Here" data-validation="on" data-validation-role="validNumber">
+                              </div>
+
+                              <div class="form-group">
+                                  <button type="submit" class="btn btn-outline-primary">Submit</button>
+                              </div>
+                          </form>
+
+
+                      </form>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+
+  </div>
+
+
+<script src="js/validation.js"></script>
+
+
+</body>
+</html>
