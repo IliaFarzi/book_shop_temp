@@ -24,6 +24,10 @@ $(document).ready(function(){
 	});
 	//master
 	function master() {
+		$("#cart-page").click(function (event){
+			movingDownAnimate(event)
+			purchase()
+		})
 		nav()
 		homePage()
 	}
@@ -174,7 +178,59 @@ $(document).ready(function(){
 		})
 	}
 	function purchase() {
-		
+		$("#navbarDropdown").addClass("disabled")
+		let total = 0
+		$("#main").html(`<div class="row ">
+<div class="col-8 mx-auto">
+<div class="card">
+<div class="card-header bg-jet p-2 d-flex align-content-center justify-content-center">
+<div class="card-title my-4">
+<h3 class="text-white mb-0">فاکتور خرید</h3>
+</div>
+</div>
+<div class="card-body">
+<table class="table table-bordered table-striped">  
+<thead>
+    <tr>
+      <th scope="col">ردیف</th>
+      <th scope="col">نام کتاب</th>
+      <th scope="col">تعداد</th>
+      <th scope="col">قیمت</th>
+      <th scope="col">جمع کل</th>
+      <th scope="col">حذف</th>
+    </tr>
+  </thead>
+  <tbody id = "bill-body">
+  </tbody>
+  <tfoot>
+  <tr>
+  <th colspan="6" class="final"><span> قابل پرداخت : </span></th>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+</div>
+</div>`)
+
+		$(cartCookie).each(function (index , item) {
+			$("#bill-body").append("<tr id='cart_"+item.id+"'><th scope='row'>"+(index+1)+"</th></tr>")
+			$("#cart_"+item.id).append(`
+			<td>${item.title}</td>
+			<td>${item.qty}</td>
+			<td>${item.price}</td>
+			<td>${item.price * item.qty}</td>
+			<td><i class="fa fa-trash text-danger trash"></i></td>
+			`)
+			total+= item.qty * item.price
+		})
+		$('table th , table td').addClass("text-center")
+		$('.final').append("<span>"+total+"</span><span> تومان </span>")
+		$('.trash').click(function () {
+			let id = $(this).parent().parent().attr("id")
+			removeFromCart(id.split("_")[1])
+			purchase()
+		})
 	}
 
 
@@ -356,10 +412,22 @@ $(document).ready(function(){
 		//cookie update
 		$.cookie("cart" , JSON.stringify(cartCookie) ,{ expires: 5 , path:"/"})
 	}
+	function removeFromCart(_id) {
+		let cookie = null
+		cookie = $(cartCookie).filter(function (item) {
+			return this.id !== _id
+		})
+		cartCookie = cookie
+		$.cookie("cart" , JSON.stringify(cartCookie))
+		badge(cartCookie.length)
+	}
 	function badge(_qty){
 		// func starts here
 		if(_qty != 0) {
 			$(".cart-badge").text(_qty)
+		}else {
+			$(".cart-badge").text("")
+
 		}
 	}
 
@@ -369,6 +437,12 @@ $(document).ready(function(){
 		_event.preventDefault()
 		//func starts here
 		$("html,body").animate({scrollTop:0},250)
+	}
+	function movingDownAnimate(_event){
+		//reset
+		_event.preventDefault()
+		//func starts here
+		$("html,body").animate({scrollTop:550},250)
 	}
 
 	//bug fix
